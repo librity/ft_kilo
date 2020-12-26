@@ -6,13 +6,13 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:50:03 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 01:05:40 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2020/12/26 01:39:03 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "kilo.h"
+#include "includes/kilo.h"
 
-int	main(void)
+int		main(void)
 {
 	char input;
 	char has_error;
@@ -28,7 +28,7 @@ int	main(void)
 			printf("%d\r\n", input);
 		else
 			printf("%d ('%c')\r\n", input, input);
-		if (input == 'q')
+		if (input == control_('q'))
 			break ;
 	}
 	return (0);

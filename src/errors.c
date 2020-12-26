@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   kilo.h                                             :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/11 13:24:53 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 01:13:05 by lpaulo-m         ###   ########.fr       */
+/*   Created: 2020/12/26 00:46:36 by lpaulo-m          #+#    #+#             */
+/*   Updated: 2020/12/26 01:36:31 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KILO_H
-# define KILO_H
+#include "../includes/kilo.h"
 
-# include <ctype.h>
-# include <errno.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <termios.h>
-# include <unistd.h>
-
-struct termios s_original_tty_attributes;
-struct termios s_raw_tty_attributes;
-
-void	die(const char *error_message);
-
-void	tty_disable_raw_mode(void);
-void	tty_enable_raw_mode(void);
-
-#endif
+void	die(const char *error_message)
+{
+	perror(error_message);
+	exit(1);
+}

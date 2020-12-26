@@ -1,19 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   editor.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/26 00:46:36 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 00:53:52 by lpaulo-m         ###   ########.fr       */
+/*   Created: 2020/12/26 01:25:28 by lpaulo-m          #+#    #+#             */
+/*   Updated: 2020/12/26 01:36:27 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "kilo.h"
-
-void	die(const char *error_message)
-{
-	perror(error_message);
-	exit(1);
-}
+#include "../includes/kilo.h"

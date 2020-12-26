@@ -6,11 +6,11 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 23:00:03 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 01:12:32 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2020/12/26 01:36:37 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "kilo.h"
+#include "../includes/kilo.h"
 
 void	tty_disable_raw_mode(void)
 {
