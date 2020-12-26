@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   kilo.c                                             :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 16:50:03 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 01:05:40 by lpaulo-m         ###   ########.fr       */
+/*   Created: 2020/12/26 00:46:36 by lpaulo-m          #+#    #+#             */
+/*   Updated: 2020/12/26 00:53:52 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "kilo.h"
 
-int	main(void)
+void	die(const char *error_message)
 {
-	char input;
-	char has_error;
-
-	tty_enable_raw_mode();
-	while (1)
-	{
-		input = '\0';
-		has_error = read(STDIN_FILENO, &input, 1);
-		if (has_error == -1 && errno != EAGAIN)
-			die("`read` couldn't read next input character");
-		if (iscntrl(input))
-			printf("%d\r\n", input);
-		else
-			printf("%d ('%c')\r\n", input, input);
-		if (input == 'q')
-			break ;
-	}
-	return (0);
+	perror(error_message);
+	exit(1);
 }

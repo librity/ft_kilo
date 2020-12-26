@@ -49,21 +49,56 @@ $ make clean
 - https://opensource.com/article/19/7/structure-multi-file-c-part-1
 - https://en.wikipedia.org/wiki/Makefile
 
+## [termios.h](https://man7.org/linux/man-pages/man0/termios.h.0p.html)
+
+Contains the definitions used by the terminal I/O interfaces.
+
+- `IXON`: input bitflag that enables `XOFF` and `XON` signal, `Ctrl-S` and
+  `Ctrl-Q` respectively.
+- `ICRNL`: input bitflag that enables the terminal to interpret a carriage
+  return as a new line.
+- `BRKINT`: input bitflag sends a `SIGINT` signal to the program whenever it
+  reaches a break condition.
+- `INPCK`: input bitflag that enables parity checking.
+- `ISTRIP`: input bitflag that "strips" the 8th bit of each input byte, i.e.,
+  sets it to 0.
+
+- `OPOST`: output bitflag that enables post-processing of output, like `\n` into
+  `\r\n`. When we disable it, the terminal emulator doesn't input a carriage
+  return after every new line and the output "stairs down" the terminal.
+
+- `CS8`: bit mask that sets the character size (CS) to 8 bits per byte.
+
+- `ECHO`: local [bitflag](https://en.wikipedia.org/wiki/Bit_field) that causes
+  each key you type to be printed to the terminal. Disabling it no longer prints
+  everything we type on the terminal.
+- `ICANON`: local bitflag that enables canonical mode, i.e., reads input
+  line-by-line. Disabling it allows us to read input byte-by-byte.
+- `ISIG`: local bitflag that enables `SIGINT` and `SIGTSTP` signal, `Ctrl-C`
+  and `Ctrl-Z` respectively.
+- `IEXTEN`: local bitflag that enables `Ctrl-V` and `Ctrl-O` signals, that
+  interpret the next character as a literal.
+
+- `VMIN`: control character index that represents the minimun number of bytes
+  that `read()` reads before returning.
+- `VTIME`: control character index that represents the timeout of `read()` in
+  tenths of a second.
+
 ## Makefile
 
 - `$(CC)` is a variable that make expands to cc by default.
 - `-Wall` stands for “all Warnings”, and gets the compiler to warn you when it
-sees code in your program that might not technically be wrong, but is considered
-bad or questionable usage of the C language, like using variables before
-initializing them.
+  sees code in your program that might not technically be wrong, but is considered
+  bad or questionable usage of the C language, like using variables before
+  initializing them.
 - `-Wextra`, `-Werror` and `-pedantic` turn on even more warnings. For each step
-in this tutorial, if your program compiles, it shouldn’t produce any warnings
-except for “unused variable” warnings in some cases. If you get any other
-warnings, check to make sure your code exactly matches the code in that step.
+  in this tutorial, if your program compiles, it shouldn’t produce any warnings
+  except for “unused variable” warnings in some cases. If you get any other
+  warnings, check to make sure your code exactly matches the code in that step.
 - `-std=c99` specifies the exact version of the C language standard we’re using,
-which is C99. C99 allows us to declare variables anywhere within a function,
-whereas ANSI C requires all variables to be declared at the top of a function or
-block.
+  which is C99. C99 allows us to declare variables anywhere within a function,
+  whereas ANSI C requires all variables to be declared at the top of a function or
+  block.
 
 ## Commands
 
