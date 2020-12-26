@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   kilo.c                                             :+:      :+:    :+:   */
+/*   kilo.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/07 16:50:03 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/25 23:34:43 by lpaulo-m         ###   ########.fr       */
+/*   Created: 2020/11/11 13:24:53 by lpaulo-m          #+#    #+#             */
+/*   Updated: 2020/12/25 23:35:24 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "kilo.h"
+#ifndef KILO_H
+# define KILO_H
 
-int	main(void)
-{
-	char input;
+# include <ctype.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <termios.h>
+# include <unistd.h>
 
-	tty_enable_raw_mode();
-	while (read(STDIN_FILENO, &input, 1) == 1 && input != 'q')
-	{
-		if (iscntrl(input))
-		{
-			printf("%d\n", input);
-		}
-		else
-		{
-			printf("%d ('%c')\n", input, input);
-		}
-	}
-	return (0);
-}
+struct termios s_original_tty_attributes;
+
+void	tty_disable_raw_mode(void);
+void	tty_enable_raw_mode(void);
+
+#endif
