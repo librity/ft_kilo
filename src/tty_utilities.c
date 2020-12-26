@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   editor_utilities.c                                 :+:      :+:    :+:   */
+/*   tty_utilities.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:25:42 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 15:01:08 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2020/12/26 14:45:33 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/kilo.h"
 
-char	control_(char character)
+void	wipe_screen(void)
 {
-	return (character & 0x1f);
+	write(STDOUT_FILENO, "\x1b[2J", 4);
 }
 
-void	editor_draw_rows(void)
+void	reset_cursor(void)
 {
-	int current_row;
-
-	current_row = 0;
-	while (current_row < g_config.tty_rows)
-	{
-		write(STDOUT_FILENO, "~\r\n", 3);
-		current_row++;
-	}
+	write(STDOUT_FILENO, "\x1b[1;1H", 6);
 }
 
-void	editor_refresh_screen(void)
+void	clear_tty(void)
 {
-	clear_tty();
-	editor_draw_rows();
+	wipe_screen();
 	reset_cursor();
 }

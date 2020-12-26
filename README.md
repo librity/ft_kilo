@@ -10,12 +10,22 @@ CLI text editor written in C, following 42's Norminette. Inspired by:
 
 ## Resources
 
+- https://www.tutorialspoint.com/cprogramming/c_data_types.htm
+- https://stackoverflow.com/questions/31119606/expression-is-not-an-integer-constant-expression-in-ios-objective-c
+
 - https://github.com/Gegel85/norminette/tree/master/tests
 - http://check.sourceforge.net/doc/check_html/check_2.html#SEC3
 - https://stackoverflow.com/questions/65820/unit-testing-c-code
 - https://notes.eatonphil.com/unit-testing-c-code-with-gtest.html
-- https://opensource.com/article/19/7/structure-multi-file-c-part-1
+
 - https://en.wikipedia.org/wiki/Makefile
+- https://opensource.com/article/19/7/structure-multi-file-c-part-1
+
+- https://vt100.net/docs/vt100-ug/chapter3.html#ED
+- https://en.wikipedia.org/wiki/VT100
+- http://ascii-table.com/control-chars.php
+- https://en.wikipedia.org/wiki/Ncurses
+- https://en.wikipedia.org/wiki/Terminfo
 
 ## Compile and Run
 
@@ -95,3 +105,7 @@ Contains the definitions used by the terminal I/O interfaces.
   that `read()` reads before returning.
 - `VTIME`: control character index that represents the timeout of `read()` in
   tenths of a second.
+
+## [sys/ioctl.h](https://man7.org/linux/man-pages/man2/ioctl.2.html)
+
+- `TIOCGWINSZ`: TerminalInputOutputControlGetWINdowSiZe
