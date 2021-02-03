@@ -1,7 +1,14 @@
-# ft_kilo
+# The Kilo Text editor, according to 42 S. Paulo
 
-> "Programs do one thing, do it well, and act on files."
-> Some bearded nerd in the 70's
+> “I believe 42 will have a rippling effect on the history of the world.”
+> [@michaelbrave](https://github.com/michaelbrave)
+
+The more I study at 42 the more I see the revival of a powerful educational
+method, renewd to a modern discipline. It's not a school or academy, but more
+like a Tech _Dojo_ or _ישיבה‎_ with sparring and _חברותא_.
+
+> “Programs do one thing, do it well, and act on files.”
+> [Some bearded nerd in the 70's](https://en.wikipedia.org/wiki/Ken_Thompson)
 
 CLI text editor written in C, following 42's Norminette. Inspired by:
 
@@ -12,6 +19,7 @@ CLI text editor written in C, following 42's Norminette. Inspired by:
 
 - https://www.tutorialspoint.com/cprogramming/c_data_types.htm
 - https://stackoverflow.com/questions/31119606/expression-is-not-an-integer-constant-expression-in-ios-objective-c
+- https://data-flair.training/blogs/macros-in-c-programming/
 
 - https://github.com/Gegel85/norminette/tree/master/tests
 - http://check.sourceforge.net/doc/check_html/check_2.html#SEC3
@@ -53,6 +61,23 @@ $ source ~/.bash_profile
 
 ```bash
 $ norminette *.c **/*.c **/*.h
+```
+
+### Quirks
+
+```c
+/*
+** This is a proper norminette comment
+*/
+
+int		main(void)
+{
+	int		variable_one;
+	char	variable_two;
+
+	variable_one = 42;
+	return (0);
+}
 ```
 
 ## Makefile
