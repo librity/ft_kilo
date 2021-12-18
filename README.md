@@ -1,11 +1,30 @@
-# The Kilo Text editor, according to 42 S. Paulo
+<h3 align="center">The 42-compliant Kilo Text editor</h3>
 
-> “I believe 42 will have a rippling effect on the history of the world.”
-> [@michaelbrave](https://github.com/michaelbrave)
+<div align="center">
 
-The more I study at 42 the more I see the revival of a powerful educational
-method, renewd to a modern discipline. It's not a school or academy, but more
-like a Tech _Dojo_ or _ישיבה‎_ with sparring and _חברותא_.
+![42 São Paulo](https://img.shields.io/badge/42-SP-1E2952)
+![License](https://img.shields.io/github/license/librity/ft_kilo?color=yellow)
+![Code size in bytes](https://img.shields.io/github/languages/code-size/librity/ft_kilo?color=blue)
+![Lines of code](https://img.shields.io/tokei/lines/github/librity/ft_kilo?color=blueviolet)
+![Top language](https://img.shields.io/github/languages/top/librity/ft_kilo?color=ff69b4)
+![Last commit](https://img.shields.io/github/last-commit/librity/ft_kilo?color=orange)
+
+</div>
+
+<p align="center"> A simple terminal text editor compliant with 42's standards.
+  <br>
+</p>
+
+---
+
+## 📜 Table of Contents
+
+- [About](#about)
+- [Notes](#notes)
+- [42 São Paulo](#ft_sp)
+- [Resources](#resources)
+
+## 🧐 About <a name = "about"></a>
 
 > “Programs do one thing, do it well, and act on files.”
 > [Some bearded nerd in the 70's](https://en.wikipedia.org/wiki/Ken_Thompson)
@@ -15,27 +34,9 @@ CLI text editor written in C, following 42's Norminette. Inspired by:
 - https://github.com/antirez/kilo/blob/master/kilo.c
 - https://viewsourcecode.org/snaptoken/kilo/
 
-## Resources
+## 📝 Notes <a name = "notes"></a>
 
-- https://www.tutorialspoint.com/cprogramming/c_data_types.htm
-- https://stackoverflow.com/questions/31119606/expression-is-not-an-integer-constant-expression-in-ios-objective-c
-- https://data-flair.training/blogs/macros-in-c-programming/
-
-- https://github.com/Gegel85/norminette/tree/master/tests
-- http://check.sourceforge.net/doc/check_html/check_2.html#SEC3
-- https://stackoverflow.com/questions/65820/unit-testing-c-code
-- https://notes.eatonphil.com/unit-testing-c-code-with-gtest.html
-
-- https://en.wikipedia.org/wiki/Makefile
-- https://opensource.com/article/19/7/structure-multi-file-c-part-1
-
-- https://vt100.net/docs/vt100-ug/chapter3.html#ED
-- https://en.wikipedia.org/wiki/VT100
-- http://ascii-table.com/control-chars.php
-- https://en.wikipedia.org/wiki/Ncurses
-- https://en.wikipedia.org/wiki/Terminfo
-
-## Compile and Run
+### Compile and Run
 
 Using `make`:
 
@@ -44,7 +45,7 @@ $ make && ./kilo
 $ make clean
 ```
 
-## [Norminnette](https://github.com/42Paris/norminette)
+### [Norminnette](https://github.com/42Paris/norminette)
 
 1. Install
 
@@ -63,7 +64,7 @@ $ source ~/.bash_profile
 $ norminette *.c **/*.c **/*.h
 ```
 
-### Quirks
+#### Quirks
 
 ```c
 /*
@@ -80,7 +81,7 @@ int		main(void)
 }
 ```
 
-## Makefile
+### Makefile
 
 - `$(CC)` is a variable that make expands to cc by default.
 - `-Wall` stands for “all Warnings”, and gets the compiler to warn you when it
@@ -96,7 +97,7 @@ int		main(void)
   whereas ANSI C requires all variables to be declared at the top of a function or
   block.
 
-## [termios.h](https://man7.org/linux/man-pages/man0/termios.h.0p.html)
+### [termios.h](https://man7.org/linux/man-pages/man0/termios.h.0p.html)
 
 Contains the definitions used by the terminal I/O interfaces.
 
@@ -131,6 +132,57 @@ Contains the definitions used by the terminal I/O interfaces.
 - `VTIME`: control character index that represents the timeout of `read()` in
   tenths of a second.
 
-## [sys/ioctl.h](https://man7.org/linux/man-pages/man2/ioctl.2.html)
+### [sys/ioctl.h](https://man7.org/linux/man-pages/man2/ioctl.2.html)
 
 - `TIOCGWINSZ`: TerminalInputOutputControlGetWINdowSiZe
+
+## 🛸 42 São Paulo <a name = "ft_sp"></a>
+
+Part of the larger [42 Network](https://www.42.fr/42-network/),
+[42 São Paulo](https://www.42sp.org.br/) is a software engineering school
+that offers a healthy alternative to traditional education:
+
+- It doesn't have any teachers and classes.
+- Students learn by cooperating
+  and correcting each other's work (peer-to-peer learning).
+- Its focus is as much on social skills as it is on technical skills.
+- It's completely free to anyone that passes its selection process -
+  [**The Piscine**](https://42.fr/en/admissions/42-piscine/)
+
+It's an amazing school, and I'm grateful for the opportunity.
+
+> “I believe 42 will have a rippling effect on the history of the world.”
+> [@michaelbrave](https://github.com/michaelbrave)
+
+The more I study at 42 the more I see the revival of a powerful educational
+method renewed to a modern discipline. It's not a school in the traditional sense,
+but more like a Tech _Dojo_ with training and sparring.
+
+Basically the computer nerd version of the
+[Lyceum](<https://en.wikipedia.org/wiki/Lyceum_(Classical)>)
+as opposed to the Apollonian
+[Academy](https://en.wikipedia.org/wiki/Platonic_Academy).
+
+<p align="center">
+  <img src=".github/school_of_athens_center.jpg" />
+</p>
+
+## 📚 Resources <a name = "resources"></a>
+
+- https://www.tutorialspoint.com/cprogramming/c_data_types.htm
+- https://stackoverflow.com/questions/31119606/expression-is-not-an-integer-constant-expression-in-ios-objective-c
+- https://data-flair.training/blogs/macros-in-c-programming/
+
+- https://github.com/Gegel85/norminette/tree/master/tests
+- http://check.sourceforge.net/doc/check_html/check_2.html#SEC3
+- https://stackoverflow.com/questions/65820/unit-testing-c-code
+- https://notes.eatonphil.com/unit-testing-c-code-with-gtest.html
+
+- https://en.wikipedia.org/wiki/Makefile
+- https://opensource.com/article/19/7/structure-multi-file-c-part-1
+
+- https://vt100.net/docs/vt100-ug/chapter3.html#ED
+- https://en.wikipedia.org/wiki/VT100
+- http://ascii-table.com/control-chars.php
+- https://en.wikipedia.org/wiki/Ncurses
+- https://en.wikipedia.org/wiki/Terminfo
