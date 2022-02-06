@@ -6,7 +6,7 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:25:28 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 15:00:44 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:48:10 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	initialize_editor(void)
 {
-	char has_error;
+	char	has_error;
 
 	has_error = set_window_size(&g_config.tty_rows, &g_config.tty_columns);
 	if (has_error == -1)
@@ -23,8 +23,8 @@ void	initialize_editor(void)
 
 char	editor_read_key(void)
 {
-	char input;
-	char has_error;
+	char	input;
+	char	has_error;
 
 	has_error = read(STDIN_FILENO, &input, 1);
 	while (has_error != 1)
@@ -38,14 +38,13 @@ char	editor_read_key(void)
 
 void	editor_process_keypresses(void)
 {
-	char current_key;
+	char	current_key;
 
 	current_key = editor_read_key();
-	switch (current_key)
+	if (current_key == CONTROL_Q)
 	{
-		case CONTROL_Q:
 		clear_tty();
 		exit(0);
-		break ;
+		return ;
 	}
 }

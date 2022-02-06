@@ -6,7 +6,7 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:25:42 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 15:01:08 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:48:29 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	control_(char character)
 
 void	editor_draw_rows(void)
 {
-	int current_row;
+	int	current_row;
 
 	current_row = 0;
 	while (current_row < g_config.tty_rows)

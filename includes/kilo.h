@@ -6,7 +6,7 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 13:24:53 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 15:09:15 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/02/06 17:00:08 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ struct	s_editor_config {
 	int				tty_rows;
 	int				tty_columns;
 };
-struct s_editor_config g_config;
+struct s_editor_config	g_config;
 
 void	die(const char *error_message);
 

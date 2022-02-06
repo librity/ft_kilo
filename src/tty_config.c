@@ -6,7 +6,7 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 23:00:03 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 15:09:45 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:56:39 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	tty_disable_raw_mode(void)
 {
-	char has_error;
+	char	has_error;
 
-	has_error =
-		tcsetattr(STDIN_FILENO, TCSAFLUSH, &g_config.original_tty_flags);
+	has_error = tcsetattr(
+			STDIN_FILENO,
+			TCSAFLUSH,
+			&g_config.original_tty_flags
+			);
 	if (has_error == -1)
 		die("`tcsetattr` couldn't restore original tty attributes");
 }
@@ -43,7 +46,7 @@ void	tty_enable_raw_mode(void)
 		die("`tcsetattr` couldn't set raw mode tty attributes");
 }
 
-int		set_window_size(int *row_count, int *column_count)
+int	set_window_size(int *row_count, int *column_count)
 {
 	struct winsize	window_size;
 	char			has_error;

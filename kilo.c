@@ -6,13 +6,13 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 16:50:03 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2020/12/26 15:00:10 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/02/06 16:57:04 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/kilo.h"
 
-int		main(void)
+int	main(void)
 {
 	tty_enable_raw_mode();
 	initialize_editor();
