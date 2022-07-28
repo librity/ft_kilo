@@ -6,7 +6,7 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 01:25:28 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/02/06 16:48:10 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/07/28 13:06:08 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	initialize_editor(void)
 {
 	char	has_error;
 
-	has_error = set_window_size(&g_config.tty_rows, &g_config.tty_columns);
+	has_error = set_window_size(&c()->tty_rows, &c()->tty_columns);
 	if (has_error == -1)
 		die("`set_window_size` couldn't get terminal information from `ioctl`");
 }

@@ -6,7 +6,7 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 13:24:53 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/02/06 17:00:08 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/07/28 13:00:36 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@
 # include <termios.h>
 # include <unistd.h>
 
-struct	s_editor_config {
+typedef struct s_kilo
+{
 	struct termios	original_tty_flags;
 	int				tty_rows;
 	int				tty_columns;
-};
-struct s_editor_config	g_config;
+}		t_kilo;
+
+t_kilo	*c(void);
 
 void	die(const char *error_message);
 

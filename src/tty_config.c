@@ -6,7 +6,7 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 23:00:03 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/02/06 16:56:39 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/07/28 13:06:41 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	tty_disable_raw_mode(void)
 	has_error = tcsetattr(
 			STDIN_FILENO,
 			TCSAFLUSH,
-			&g_config.original_tty_flags
+			&c()->original_tty_flags
 			);
 	if (has_error == -1)
 		die("`tcsetattr` couldn't restore original tty attributes");
@@ -30,11 +30,11 @@ void	tty_enable_raw_mode(void)
 	struct termios	raw_tty_flags;
 	char			has_error;
 
-	has_error = tcgetattr(STDIN_FILENO, &g_config.original_tty_flags);
+	has_error = tcgetattr(STDIN_FILENO, &c()->original_tty_flags);
 	if (has_error == -1)
 		die("`tcgetattr` couldn't fetch original tty attributes");
 	atexit(tty_disable_raw_mode);
-	raw_tty_flags = g_config.original_tty_flags;
+	raw_tty_flags = c()->original_tty_flags;
 	raw_tty_flags.c_iflag &= ~(BRKINT | ICRNL | INPCK | ISTRIP | IXON);
 	raw_tty_flags.c_oflag &= ~(OPOST);
 	raw_tty_flags.c_cflag |= (CS8);

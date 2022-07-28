@@ -6,29 +6,39 @@
 #    By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/25 22:59:46 by lpaulo-m          #+#    #+#              #
-#    Updated: 2020/12/26 14:12:19 by lpaulo-m         ###   ########.fr        #
+#    Updated: 2022/07/28 13:07:13 by lpaulo-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
+NAME = kilo
+
+CC = gcc
 CCFLAGS = -Wall -Wextra -Werror -pedantic -std=c99
 
-TARGET = kilo
-MAIN = $(addsuffix .o, $(TARGET) )
+REMOVE = /bin/rm -f
+REMOVE_RECURSIVE = /bin/rm -rf
 
-SOURCES = kilo.c src/errors.c src/tty_config.c src/tty_utilities.c src/editor.c src/editor_utilities.c
+MAIN = $(addsuffix .o, $(NAME) )
+
+SOURCES = kilo.c src/control.c src/errors.c src/tty_config.c src/tty_utilities.c src/editor.c src/editor_utilities.c
 OBJECTS = $(subst .c,.o,$(SOURCES))
 DEPENDENCIES = includes/kilo.h
 
-.PHONY: all clean
-
-all: $(TARGET)
+all: $(NAME)
 
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f $(NAME) $(OBJECTS)
+
+fclean: clean
+	$(REMOVE) $(NAME)
+
+re: fclean all
 
 $(OBJECTS): %.o : %.c $(DEPENDENCIES)
 	$(CC) -c -o $@ $< $(CCFLAGS)
 
-$(TARGET): % : $(filter-out $(MAIN), $(OBJECTS)) %.o
+$(NAME): % : $(filter-out $(MAIN), $(OBJECTS)) %.o
 	$(CC) -o $@ $(LIBS) $^ $(CCFLAGS) $(LDFLAGS)
+
+.PHONY: all re \
+	clean fclean
