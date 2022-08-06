@@ -4,8 +4,9 @@
   "editor.renderWhitespace": "all",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "files.associations": {
-    "*.gohtml": "html",
-    "kilo.h": "c"
+  "editor.detectIndentation": true,
+
+  "[c]": {
+    "editor.defaultFormatter": "keyhr.42-c-format"
   }
 }
